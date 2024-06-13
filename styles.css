@@ -792,8 +792,9 @@ nav {
   }
 
   .main-menu {
-    width: 63vmin;
-    height: 88vmin;
+    width: 64vmin;
+    height: fit-content;
+    padding-bottom: 7vmin;
   }
 
   .menu-btn{

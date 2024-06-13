@@ -56,7 +56,7 @@ nav {
   .main-menu {
   border: 2px solid white;
   position: absolute;
-  height: 55vmin;
+  height: 60vmin;
   width: 40vmin;
   background: linear-gradient(45deg, #2b2e2e, #131d1d);
   padding-left: 20px;
@@ -119,18 +119,17 @@ nav {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 3vmin;
+  gap: 2vmin;
 }
 
 .aiLevelBtns {
-  font-family: "Merienda";
+  font-family: "kalam";
   padding: 2.5px;
   border-radius: 8px;
   background-color: #4fdba3;
   font-size: 3.5vmin;
   width: 65%;
   animation: transform ease-in-out 1s;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .aiLevelBtns:hover {
@@ -791,7 +790,11 @@ nav {
     font-size: 4vmin;
     margin-right: 5px;
   }
-
+  
+   .menu-container{
+    margin-top: -30px;
+  }
+  
   .main-menu {
     width: 64vmin;
     height: fit-content;

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic-Tac-Toe Game</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="popDiv">
+    <div id="popup" class="popup">Please fill out PlayerO and PlayerX Names</div>
+  </div>
+  <main>
+    <nav>
+      <div class="heading">TicTacToe.com</div>
+    </nav>
+    <div class="fullScreenIcon">
+      <button class="enableFullScreenMsg">Enjoy Full Screen<i class="ri-arrow-right-s-line rightArrow"></i></button>
+      <i class="ri-fullscreen-line fullScreenOn" title="Full Screen"></i>
+      <i class="ri-fullscreen-exit-line fullScreenOff" title="Exit Full Screen"></i>
+    </div>
+    <div class="menu-container">
+      <div class="main-menu">
+        <h1>Main Menu</h1>
+        <button class="menu-btn ai">Play with AI</button>
+        <div class="aiLevel hide">
+          <button class="aiLevelBtns">Lucid AI</button>
+          <button class="aiLevelBtns">Nuanced AI</button>
+          <button class="aiLevelBtns">Esoteric AI</button>
+        </div>
+        <button class="menu-btn backToMainMenuForAI hide">Main Menu</button>
+        <div class="other-menuOptions">
+          <button class="menu-btn friend">Play with Friends</button>
+          <button class="menu-btn setting">Setting</button>
+          <div class="settingOptions hide">
+            <div class="music">
+              <i class="ri-music-fill fullMusic"></i>
+              <svg width="25" height="28" class="muteMusic hide">
+                <path
+                  d="M12,7.33a1,1,0,0,0,1-1V5.78l6-1.5V7.22L14.7,8.3a1,1,0,0,0,.24,2l.24,0L20.24,9l.07,0,.19-.09.15-.1a.93.93,0,0,0,.13-.15.78.78,0,0,0,.1-.15.55.55,0,0,0,.06-.18.65.65,0,0,0,0-.19A.24.24,0,0,0,21,8V3a1,1,0,0,0-1.24-1l-8,2A1,1,0,0,0,11,5V6.33A1,1,0,0,0,12,7.33Zm9.71,13-9-9h0l-9-9A1,1,0,0,0,2.29,3.71L11,12.41v2.94A3.45,3.45,0,0,0,9.5,15,3.5,3.5,0,1,0,13,18.5V14.41l7.29,7.3a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM9.5,20A1.5,1.5,0,1,1,11,18.5,1.5,1.5,0,0,1,9.5,20Z" />
+              </svg>
+              <input type="range" class="rangeInput" name="" id="rangeInput">
+            </div>
+            <div class="sound">
+              <i class="ri-volume-up-fill fullVolume hide"></i>
+              <i class="ri-volume-down-fill lowVolume"></i>
+              <i class="ri-volume-mute-fill muteVolume hide"></i>
+              <input type="range" class="rangeInput" name="" id="rangeInput">
+            </div>
+          </div>
+          <button class="menu-btn backToMainMenuForSetting hide">Main Menu</button>
+          <button class="menu-btn quit">Quit</button>
+        </div>
+      </div>
+    </div>
+    <div class="GameAREA hide">
+      <div class="game-container hide">
+        <div class="score-card hide">
+          <h1>Score Card</h1>
+          <table class="score-table"></table>
+          <div class="final-winner"></div>
+        </div>
+        <div class="nameField">
+          <form class="PlayerO">
+            <label for="O">Player O</label>
+            <div class="nameholderO hide"></div>
+            <input type="text" class="inputO" maxlength="8" placeholder="Your name">
+          </form>
+          <form class="PlayerX">
+            <label for="X">Player X</label>
+            <div class="nameholderX hide"></div>
+            <input type="text" class="inputX" maxlength="8" placeholder="Opponent name">
+          </form>
+        </div>
+        <div class="msg-container hide">
+          <p id="msg"></p>
+        </div>
+        <div class="board">
+          <button class="box border-top border-left"><span class="box-text"></span></button>
+          <button class="box border-top"><span class="box-text"></span></button>
+          <button class="box border-top border-right"><span class="box-text"></span></button>
+          <button class="box border-left"><span class="box-text"></span></button>
+          <button class="box"><span class="box-text"></span></button>
+          <button class="box border-right"><span class="box-text"></span></button>
+          <button class="box border-left border-bottom"><span class="box-text"></span></button>
+          <button class="box border-bottom"><span class="box-text"></span></button>
+          <button class="box border-right border-bottom"><span class="box-text"></span></button>
+          <div id="strike" class="strike hide"></div>
+        </div>
+        <div class="settingIcon hide">
+          <i class="ri-settings-5-line settingClose"></i>
+          <i class="ri-settings-5-fill settingOpen hide"></i>
+          <div class="settingControls hide">
+            <div class="music">
+              <i class="ri-music-fill fullMusic"></i>
+              <svg width="25" height="28" class="muteMusic hide">
+                <path
+                  d="M12,7.33a1,1,0,0,0,1-1V5.78l6-1.5V7.22L14.7,8.3a1,1,0,0,0,.24,2l.24,0L20.24,9l.07,0,.19-.09.15-.1a.93.93,0,0,0,.13-.15.78.78,0,0,0,.1-.15.55.55,0,0,0,.06-.18.65.65,0,0,0,0-.19A.24.24,0,0,0,21,8V3a1,1,0,0,0-1.24-1l-8,2A1,1,0,0,0,11,5V6.33A1,1,0,0,0,12,7.33Zm9.71,13-9-9h0l-9-9A1,1,0,0,0,2.29,3.71L11,12.41v2.94A3.45,3.45,0,0,0,9.5,15,3.5,3.5,0,1,0,13,18.5V14.41l7.29,7.3a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM9.5,20A1.5,1.5,0,1,1,11,18.5,1.5,1.5,0,0,1,9.5,20Z" />
+              </svg>
+              <input type="range" class="rangeInput" name="music-range" id="game-music-range">
+            </div>
+            <div class="sound">
+              <i class="ri-volume-up-fill fullVolume hide"></i>
+              <i class="ri-volume-down-fill lowVolume"></i>
+              <i class="ri-volume-mute-fill muteVolume hide"></i>
+              <input type="range" class="rangeInput" name="sound-range" id="game-sound-range">
+            </div>
+          </div>
+        </div>
+
+        <div class="gameOperations">
+          <button id="start-btn" class="game-btn">Start Game</button>
+          <div class="gameBtns hide">
+            <button id="new-btn" class="game-btn">New Game</button>
+            <button id="reset-btn" class="game-btn">Reset Game</button>
+            <button id="scoreCard-btn" class="game-btn">Score Card</button>
+            <button id="menu-btn" class="game-btn">Main Menu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="quitPopMsgContainer" class="quitPopMsgContainer">
+      <div class="quitPopup">
+          <h2>Are you sure you want to quit?</h2>
+          <div class="popup-buttons">
+              <button id="yes-button" class="btn">Yes</button>
+              <button id="no-button" class="btn">No</button>
+          </div>
+      </div>
+  </div>
+  </main>
+
+  <audio id="background-music" src="audio/bgMusic.mp3" loop></audio>
+  <audio id="click-o-sound" src="audio/clickO.wav"></audio>
+  <audio id="click-x-sound" src="audio/clickX.mp3"></audio>
+  <audio id="win-sound" src="audio/winAudio.mp3"></audio>
+  <audio id="tie-sound" src="audio/gameOver.wav"></audio>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

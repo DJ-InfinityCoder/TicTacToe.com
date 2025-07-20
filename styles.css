@@ -1,0 +1,1215 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Kalam:wght@300;400;700&family=Merienda:wght@300..900&display=swap'); */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1fd1ce;
+  text-align: center;
+  max-height: 100vh;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+nav {
+  position: relative;
+  height: 9vmin;
+  width: 100%;
+  padding-top: 5px;
+  background-color: rgb(38, 33, 33);
+  box-shadow: 5px 5px 40px grey;
+}
+
+.heading {
+  font-family: "Merienda";
+  color: aliceblue;
+  font-size: 4vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.founder {
+  font-family: "Caveat";
+  color: aliceblue;
+  font-size: 2.5vmin;
+  display: flex;
+  justify-content: right;
+  margin-right: 10px;
+
+}
+
+.fullScreenIcon {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-top: 1.5vmin;
+  margin-right: 3vmin;
+
+  .fullScreenOn,
+  .fullScreenOff {
+    z-index: 10;
+    font-size: 3.5vmin;
+    font-weight: bolder;
+  }
+
+  .fullScreenOn {
+    display: inline;
+    /* Display the full screen icon */
+  }
+
+  .fullScreenOff {
+    display: none;
+    /* Hide the exit full screen icon initially */
+  }
+
+}
+
+.fullScreenOn:hover {
+  cursor: pointer;
+}
+
+.fullScreenOff:hover {
+  cursor: pointer;
+}
+
+.enableFullScreenMsg {
+  font-family: "Merienda";
+  margin-right: 2vmin;
+  padding: 0.7vmin 2vmin;
+  height: 4vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  position: relative;
+  z-index: 0;
+  border-radius: 5vmin;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  .rightArrow {
+    font-size: 3vmin;
+    padding-left: 0.5vmin;
+    margin-right: -10px;
+  }
+}
+
+.enableFullScreenMsgAnimations {
+  animation: enableFullScreenMsgAnimation 3s ease-in-out infinite;
+}
+
+
+@keyframes enableFullScreenMsgAnimation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.enableFullScreenMsg:before {
+  content: "";
+  background: linear-gradient(45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.enableFullScreenMsg:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.menu-container {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.main-menu {
+  border: 2px solid white;
+  position: absolute;
+  height: fit-content;
+  width: 36vmin;
+  background: linear-gradient(45deg, #2b2e2e, #131d1d);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 25px;
+  border-radius: 10px;
+  gap: 25px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2.5px 2.5px 15px rgb(35, 61, 77);
+  align-items: center;
+
+  h1 {
+    position: relative;
+    top: 3vmin;
+    border-radius: 10px;
+    margin-bottom: 3vmin;
+    width: 100%;
+    color: aliceblue;
+    text-shadow: 2px 1px 4px #f63dc7;
+    font-family: "Kalam";
+    font-weight: 400;
+    font-size: 35px;
+  }
+}
+
+.other-menuOptions {
+  width: 100%;
+  gap: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menu-btn {
+  width: 75%;
+  font-size: 23px;
+  font-family: "Kalam";
+  font-weight: 500;
+  padding: 0.5vmin;
+  border-radius: 1.2vmin;
+  border: none;
+  box-shadow: 1px 1px 5px palevioletred;
+  color: rgb(48, 48, 48);
+  transition: transform ease-in-out 0.2s;
+  background-color: rgb(159, 245, 251);
+}
+
+.menu-btn:hover {
+  background-color: #55fbf8;
+  color: black;
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
+.aiLevel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2vmin;
+}
+
+.aiLevelBtns {
+  padding: 2.5px;
+  border-radius: 8px;
+  background-color: #4fdba3;
+  font-family: "Kalam";
+  font-size: 3.5vmin;
+  width: 65%;
+  animation: transform ease-in-out 1s;
+}
+
+.aiLevelBtns:hover {
+  transform: scale(1.02);
+  background-color: #11ea93;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+}
+
+.aiLevelBtns:active {
+  transform: scale(0.98);
+}
+
+.settingOptions,
+.settingControls {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5vmin;
+
+  .music {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5vmin;
+  }
+
+  .sound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.3vmin;
+  }
+
+  svg {
+    margin-right: 1.2vmin;
+    fill: #04e8e4;
+  }
+
+  i {
+    font-size: 3.5vmin;
+    color: #04e8e4;
+    margin-right: 1vmin;
+  }
+
+  .lowVolume {
+    position: relative;
+    left: -2.8px;
+  }
+
+
+}
+
+.settingControls {
+  svg {
+    fill: black;
+  }
+
+  i {
+    color: #000;
+  }
+}
+
+.GameAREA {
+  height: 84vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-container {
+  padding-top: 3.5vmin;
+  position: relative;
+  height: 82vh;
+  width: 50vmin;
+  display: flex;
+  top: -1vmin;
+  align-items: center;
+  flex-direction: column;
+  gap: 4.1vmin;
+  overflow: hidden;
+}
+
+@keyframes scoreCardInAnimation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.score-card {
+  padding: 0.4vmin;
+  box-shadow: 2px 2px 20px gray;
+  border-radius: 0.8vmin;
+  height: 60.5vmin;
+  width: 44vmin;
+  overflow-y: scroll;
+  background-color: #24e7e3;
+  animation: scoreCardInAnimation 1s ease;
+
+  h1 {
+    font-family: "Merienda";
+    font-size: 4vmin;
+    border-bottom: 2px solid black;
+    text-shadow: 2px 2px 5px white;
+  }
+}
+
+.score-card::-webkit-scrollbar {
+  background-color: #04787a;
+  width: 0.8vmin;
+  border-radius: 1vmin;
+}
+
+.score-card::-webkit-scrollbar-thumb {
+  background: #dafffb;
+  border-radius: 6px;
+}
+
+.score-card::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+  cursor: pointer;
+}
+
+.score-table {
+  margin-top: 0.5vmin;
+  width: 100%;
+  border-collapse: collapse;
+
+}
+
+.score-table th,
+.score-table td {
+  border: 2px solid #3f3c3c;
+  padding: 0.8vmin;
+  font-size: 2.4vmin;
+}
+
+.score-table th {
+  font-family: "Merienda";
+  background-color: #04787a;
+  color: whitesmoke;
+}
+
+.score-table tr:hover {
+  font-family: "Merienda";
+  background-color: #ddd;
+  cursor: pointer;
+
+}
+
+.final-winner {
+  font-family: "Merienda";
+  margin-top: 4vmin;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2vmin;
+}
+
+
+
+.nameField {
+  display: flex;
+  gap: 1.2vmin;
+  font-size: 20px;
+  border: 0.4vmin solid black;
+  box-shadow: 2.5px 2.5px 5px gray;
+  border-radius: 0.8vmin;
+  padding: 0.8vmin;
+  width: 41.5vmin;
+  height: 10vmin;
+  justify-content: center;
+}
+
+@keyframes FadeOutAnimation {
+  from {
+    transform: scale(100%);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(0%);
+    opacity: 0;
+  }
+}
+
+@keyframes FadeInAnimation {
+  from {
+    transform: scale(0%);
+    opacity: 0;
+
+  }
+
+  to {
+    transform: scale(100%);
+    opacity: 1;
+  }
+}
+
+.OutAnimation {
+  animation: FadeOutAnimation 0.8s ease-in backwards;
+}
+
+.InAnimation {
+  animation: FadeInAnimation 0.8s ease-out forwards;
+}
+
+.borderX {
+  padding: 1px;
+  position: relative;
+  background: linear-gradient(0deg, #000, #272727);
+  border-radius: 0.8vmin;
+
+  label {
+    color: whitesmoke;
+  }
+}
+
+.borderX:before,
+.borderX:after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094,
+      #0000ff, #00ff00, #ffff00, #ff0000);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: borderAnimation 20s linear infinite;
+  border-radius: 0.8vmin;
+}
+
+.borderO {
+  padding: 1px;
+  position: relative;
+  background: linear-gradient(0deg, #000, #272727);
+  border-radius: 0.8vmin;
+
+  label {
+    color: whitesmoke;
+  }
+}
+
+.borderO:before,
+.borderO:after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094,
+      #0000ff, #00ff00, #ffff00, #ff0000);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: borderAnimation 20s linear infinite;
+  border-radius: 0.8vmin;
+}
+
+@keyframes borderAnimation {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.borderX:after {
+  filter: blur(10px);
+}
+
+.borderO:after {
+  filter: blur(10px);
+}
+
+.PlayerO {
+  font-family: "Merienda";
+  display: flex;
+  flex-direction: column;
+  gap: 1.3vmin;
+
+  label {
+    font-size: 3.5vmin;
+  }
+
+  input {
+    font-family: "Merienda";
+    text-align: center;
+    font-size: 2.291vmin;
+    height: 2.3vmin;
+    width: 18vmin;
+    padding: 0.8vmin;
+    border: none;
+    outline: none;
+    border-radius: 0.8vmin;
+    box-shadow: inset 1px 1px 5px rgba(128, 128, 128, 0.304), inset -1px -1px 5px rgba(128, 128, 128, 0.2);
+  }
+}
+
+.PlayerX {
+  font-family: "Merienda";
+  display: flex;
+  flex-direction: column;
+  gap: 1.3vmin;
+
+  label {
+    font-size: 3.5vmin;
+  }
+
+  input {
+    font-family: "Merienda";
+    text-align: center;
+    font-size: 2.291vmin;
+    height: 2.3vmin;
+    width: 18vmin;
+    padding: 0.8vmin;
+    border: none;
+    outline: none;
+    border-radius: 0.8vmin;
+    box-shadow: inset 1px 1px 5px rgba(128, 128, 128, 0.304), inset -1px -1px 5px rgba(128, 128, 128, 0.2);
+  }
+}
+
+.nameholderO {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5vmin;
+  font-weight: bolder;
+  text-shadow: 2px 2px 5px #000;
+  height: 2vmin;
+  width: 20vmin;
+  color: white;
+  padding-bottom: 8px;
+}
+
+.nameholderX {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5vmin;
+  font-weight: bolder;
+  text-shadow: 1.5px 1.5px 3px #000;
+  height: 2vmin;
+  width: 20vmin;
+  color: white;
+  padding-bottom: 8px;
+}
+
+
+.board {
+  position: relative;
+  height: 45vmin;
+  width: 44vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  box-shadow: 1px 1px 5px rgb(95, 92, 92);
+}
+
+.box {
+  font-family: "Merienda";
+  height: 15vmin;
+  width: 14.666vmin;
+  border: 0.4vmin solid black;
+  font-size: 8vmin;
+  color: rgb(247, 247, 95);
+  background-color: #01a3a0;
+}
+
+.hoverX:hover::after {
+  content: "x";
+  opacity: 0.4;
+}
+
+.hoverO:hover::after {
+  content: "o";
+  opacity: 0.4;
+}
+
+.border-bottom {
+  border-bottom: none;
+}
+
+.border-top {
+  border-top: none;
+}
+
+.border-left {
+  border-left: none;
+}
+
+.border-right {
+  border-right: none;
+}
+
+.box:hover {
+  cursor: pointer;
+}
+
+@keyframes strikerAnimationRow {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 109%;
+  }
+}
+
+@keyframes strikerAnimationColumn {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 109%;
+  }
+}
+
+@keyframes strikerAnimationDiagonal {
+  from {
+    scale: 0;
+  }
+
+  to {
+    scale: 104%;
+  }
+}
+
+.strike {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2.5px 2.5px 5px rgb(255, 0, 0);
+  border-radius: 50%;
+}
+
+.strike-row-1 {
+  height: 0.65vmin;
+  top: 15%;
+  animation: strikerAnimationRow 0.5s ease-out forwards;
+}
+
+.strike-row-2 {
+  height: 0.65vmin;
+  top: 48%;
+  animation: strikerAnimationRow 0.5s ease-out forwards;
+}
+
+.strike-row-3 {
+  height: 0.65vmin;
+  top: 83%;
+  animation: strikerAnimationRow 0.5s ease-out forwards;
+}
+
+.strike-column-1 {
+  width: 0.65vmin;
+  left: 16%;
+  animation: strikerAnimationColumn 0.5s ease-out forwards;
+}
+
+.strike-column-2 {
+  width: 0.65vmin;
+  left: 49.5%;
+  animation: strikerAnimationColumn 0.5s ease-out forwards;
+}
+
+.strike-column-3 {
+  width: 0.65vmin;
+  left: 83%;
+  animation: strikerAnimationColumn 0.5s ease-out forwards;
+}
+
+.strike-diagonal-1 {
+  width: 104%;
+  height: 0.8vmin;
+  top: 48%;
+  left: -1.5%;
+  transform: skewY(45deg);
+  animation: strikerAnimationDiagonal 0.5s ease-out forwards;
+}
+
+.strike-diagonal-2 {
+  width: 104%;
+  height: 0.8vmin;
+  top: 49%;
+  left: -1.5%;
+  transform: skewY(-45deg);
+  animation: strikerAnimationDiagonal 0.5s ease-out forwards;
+}
+
+.settingIcon {
+  width: 44vmin;
+  height: 10vmin;
+  display: flex;
+  font-size: 5vmin;
+  gap: 2vmin;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(120deg);
+  }
+}
+
+@keyframes reverseRotate {
+  from {
+    transform: rotate(120deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.settingClose,
+.settingOpen {
+  position: absolute;
+  cursor: pointer;
+}
+
+.settingClose.rotate,
+.settingOpen.reverseRotate {
+  animation: rotate 0.5s;
+}
+
+.settingOpen.reverseRotate {
+  animation: reverseRotate 0.5s;
+}
+
+.gameOperations {
+  width: 43.5vmin;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0.7);
+  }
+}
+
+
+#msg {
+  font-family: "Merienda";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* animation: shrink 0.7s infinite alternate; */
+  width: 43vmin;
+  height: 11.9vmin;
+  color: white;
+  text-shadow: 2px 2px 5px rgb(67, 162, 245);
+  font-size: 3.273vmin;
+}
+
+.text-border {
+  padding-left: 0.6vmin;
+  padding-right: 0.6vmin;
+  -webkit-text-stroke: 0.4px #e804d1;
+  font-weight: 500;
+  font-size: 3.5vmin;
+  color: rgb(255, 255, 255);
+  text-shadow: none;
+}
+
+
+.gameBtns {
+  border: 0.34vmin solid black;
+  border-radius: 5px;
+  background-color: #02b6b3;
+  position: relative;
+  left: -2.4px;
+  display: flex;
+  padding: 0.8vmin;
+  width: 42.2vmin;
+  flex-wrap: wrap;
+  gap: 1.2vmin;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    height: 6vmin;
+    width: 20.5vmin;
+    font-size: 3.5vmin;
+  }
+}
+
+.game-btn {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7vmin;
+  width: 25vmin;
+  font-size: 4vmin;
+  background-color: #191913;
+  color: #fff;
+  border-radius: 1vmin;
+  border: none;
+  animation: transform 0.5s ease-in-out;
+}
+
+.game-btn:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  box-shadow: 2px 2px 10px grey;
+}
+
+.game-btn:active {
+  transform: scale(0.98);
+}
+
+
+.hide {
+  display: none;
+}
+
+
+@media only screen and (max-width: 720px) {
+
+  main {
+    overflow: hidden;
+  }
+
+  body {
+    overflow: hidden;
+  }
+
+  nav {
+    height: 17vmin;
+  }
+
+  .heading {
+    font-size: 8.5vmin;
+  }
+
+  .founder {
+    font-size: 4vmin;
+    margin-right: 5px;
+  }
+
+  .fullScreenIcon {
+    position: relative;
+    scale: 1.5;
+    top: 3.5vmin;
+    right: 25vmin;
+
+    .enableFullScreenMsg {
+      margin-right: 3vmin;
+      height: 5vmin;
+
+      i {
+        font-size: 5vmin;
+        padding-right: 5px;
+      }
+    }
+
+    .fullScreenOff,
+    .fullScreenOn {
+      scale: 1.5;
+    }
+  }
+
+  .menu-container {
+    margin-top: 30px;
+    height: 65vh;
+  }
+
+  .main-menu {
+    width: 64vmin;
+    height: fit-content;
+    padding-bottom: 7vmin;
+  }
+
+  .menu-btn {
+    width: 85%;
+    font-size: 25px;
+  }
+
+  .GameAREA{
+    height: 80vh;
+    margin-top: 30px;
+  }
+  
+  .game-container {
+    top: 24px;
+    width: 55vw;
+    scale: 1.85;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    margin-top: -15vmin;
+    padding-top: 3vmin;
+  }
+
+  .quitPopup {
+    scale: 0.8;
+  }
+
+  .popup {
+    scale: 1.65;
+    border: 0.5px solid red;
+  }
+
+  .popup::after {
+    scale: 0.95;
+  }
+
+
+  .popDiv {
+    position: absolute;
+    margin-top: 7.5vh;
+  }
+
+  .aiLevelBtns {
+    border-radius: 1.5vmin;
+    font-size: 4.5vmin;
+    width: 45%;
+  }
+
+  .settingOptions {
+    i {
+      font-size: 7vmin;
+    }
+
+    svg {
+      transform: scale(1.17)
+    }
+  }
+
+  .settingControls {
+    scale: 0.7;
+    margin-left: 0.85vmin;
+
+    i {
+      font-size: 6vmin;
+    }
+
+    .music {
+      input {
+        margin-left: 2px;
+      }
+    }
+
+    svg {
+      transform: scale(1.01)
+    }
+  }
+
+}
+
+
+.popDiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup {
+  font-family: "Merienda";
+  width: fit-content;
+  background-color: rgb(235, 0, 47);
+  color: white;
+  text-align: center;
+  font-size: 2.5vmin;
+  border-radius: 1vmin;
+  padding: 2.8vmin 1.5vmin;
+  position: absolute;
+  z-index: 1;
+  top: 6vh;
+  transform: translateY(-200%);
+  opacity: 0;
+  transition: opacity 0.6s, transform 0.6s;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.popup.showPopup {
+  opacity: 1;
+  transform: translateY(0);
+  animation: shake-vertical 0.5s ease-in-out;
+}
+
+.popup::after {
+  content: "";
+  position: absolute;
+  bottom: -19.5px;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 9.5px;
+  border-style: solid;
+  border-color: red transparent transparent transparent;
+}
+
+@keyframes shake-vertical {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-10px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  75% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shake-horizontal {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px) rotate(-5deg);
+  }
+
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    transform: translateX(10px) rotate(5deg);
+  }
+}
+
+.shakeHorizontal {
+  animation: shake-horizontal 0.3s;
+}
+
+
+.quitPopMsgContainer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s;
+}
+
+.quitPopup {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.5s;
+
+  h2,
+  button {
+    font-family: "Merienda";
+  }
+}
+
+.quitPopup h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.popup-buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#yes-button {
+  background-color: #f64835;
+  color: white;
+}
+
+#no-button {
+  background-color: #32a1ec;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.8;
+  border: 1px solid black;
+  box-shadow: 2px 2px 5px black;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
